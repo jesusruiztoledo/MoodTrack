@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists de Usuario</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Playlists del Usuario</h1>
+        <ul>
+            {% for playlist in results %}
+            <li>
+                <strong>{{ playlist.Nombre }}</strong> - ID: {{ playlist.ID }}
+                <form action="/analyze" method="post" style="display:inline;">
+                    <input type="hidden" name="playlist_id" value="{{ playlist.ID }}">
+                    <button type="submit">Analizar</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+        <a class="return-link" href="/">Volver</a>
+    </div>
+</body>
+</html>
+

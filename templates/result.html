@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Análisis</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resultados del Análisis de Sentimientos</h1>
+        <table>
+            <tr>
+                <th>Canción</th>
+                <th>Artista</th>
+                <th>Sentimiento</th>
+                <th>Confianza</th>
+            </tr>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.song }}</td>
+                <td>{{ result.artist }}</td>
+                <td>{{ result.sentiment }}</td>
+                <td>{{ result.score }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a class="return-link" href="/user">Volver</a>
+    </div>
+</body>
+</html>
