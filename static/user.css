@@ -1,0 +1,97 @@
+/* RESET DE ESTILOS */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILO GLOBAL */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #1db954, #191414);
+    color: #fff;
+    padding: 20px;
+}
+
+/* TITULO PRINCIPAL */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* LISTA DE PLAYLISTS */
+ul {
+    list-style: none; /* Quitar puntos iniciales */
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 20px; /* Espaciado entre entradas */
+    font-size: 1.1rem;
+}
+
+/* BOTONES */
+button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #136a3a, #0f532d);
+    border: 2px solid #0f532d;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0f532d, #094020);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+button:focus {
+    outline: 2px dashed #fff;
+    outline-offset: 3px;
+}
+
+/* ENLACES DE RETORNO */
+.return-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #1db954;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.return-link:hover {
+    color: #0f532d;
+}
+
+.return-link:focus {
+    outline: 2px dashed #1db954;
+    outline-offset: 2px;
+}

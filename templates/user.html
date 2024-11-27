@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playlists de Usuario</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <h1>PLAYLIST DEL USUARIO</h1>
     <div class="container">
-        <h1>Playlists del Usuario</h1>
         <ul>
             {% for playlist in results %}
             <li>
-                <strong>{{ playlist.Nombre }}</strong> - ID: {{ playlist.ID }}
+                <strong>{{ playlist.Nombre }}</strong> 
                 <form action="/analyze" method="post" style="display:inline;">
                     <input type="hidden" name="playlist_id" value="{{ playlist.ID }}">
-                    <button type="submit">Analizar</button>
+                    <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </li>
             {% endfor %}
         </ul>
-        <a class="return-link" href="/">Volver</a>
+
     </div>
+    <a class="return-link" href="/">Volver</a>
 </body>
 </html>
 
