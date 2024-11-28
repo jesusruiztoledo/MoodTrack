@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'MiFuente';
+    src: url('./gunmetl.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Reset de estilos */
 * {
     margin: 0;
@@ -5,44 +12,107 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 /* Estilo global */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background: linear-gradient(135deg, #1db954, #191414);
     color: #fff;
     padding: 20px;
+    background: linear-gradient(135deg, #1db954, #191414);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+    overflow: hidden;
 }
 
-h1, h2 {
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 70% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    animation: moveBanner 7s infinite linear;
+}
+
+.header-image {
+    width: 700px;
+    height: 200px;
+    margin: 0 10px;
+}
+
+h1 {
+    font-family: 'MiFuente', sans-serif;
+    font-size: 120px;
+    color: #000000;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    animation: colorChange 5s infinite; 
 }
 
-a {
-    color: #1db954;
-    text-decoration: none;
-    font-weight: bold;
+@keyframes colorChange {
+    0% {
+        color: #000000;
+    }
+    25% {
+        color: #ff0000;
+    }
+    50% {
+        color: #00ff00;
+    }
+    75% {
+        color: #0000ff;
+    }
+    100% {
+        color: #000000;
+    }
 }
 
-a:hover {
-    text-decoration: underline;
+@keyframes moveBanner {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 /* Contenedor principal */
 .container {
+    padding-top: 90px;
     max-width: 800px;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Formularios */
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 15px;
     margin-bottom: 20px;
 }
@@ -52,12 +122,21 @@ form label {
     font-weight: bold;
 }
 
-form input[type="text"] {
-    padding: 10px;
-    font-size: 1rem;
+input {
     border: none;
-    border-radius: 5px;
+    border-bottom: 2px solid #333;
+    background-color: transparent;
     outline: none;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    width: 300px;
+}
+
+input::placeholder {
+    color: #868686; /* Cambia este color al que prefieras */
+    opacity: 1; /* Asegúrate de que la opacidad esté al 100% */
 }
 
 form button {
@@ -75,31 +154,6 @@ form button:hover {
     background-color: #14893c;
 }
 
-/* Tablas */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table th, table td {
-    padding: 10px;
-    text-align: left;
-}
-
-table th {
-    background: #1db954;
-    color: #fff;
-}
-
-table tr:nth-child(even) {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-table tr:nth-child(odd) {
-    background: rgba(255, 255, 255, 0.2);
-}
-
 /* Botón en listas */
 button {
     padding: 8px 12px;
@@ -112,11 +166,4 @@ button {
 
 button:hover {
     background-color: #14893c;
-}
-
-/* Links */
-.return-link {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
 }
