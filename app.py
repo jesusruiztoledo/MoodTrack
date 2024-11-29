@@ -60,7 +60,12 @@ def analyze():
     # Análisis de sentimientos
     sentiments = [classifier(lyric)[0] for lyric in clean_lyrics]
     results = [
-        {"song": song["name"], "artist": song["artist"], "sentiment": sentiment["label"], "score": sentiment["score"]}
+        {
+            "song": song["name"], 
+            "artist": song["artist"], 
+            "sentiment": "Triste" if sentiment["label"] == "NEGATIVE" else "Feliz", 
+            "score": sentiment["score"]
+        }
         for song, sentiment in zip(playlist, sentiments)
     ]
 

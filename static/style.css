@@ -46,12 +46,11 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    animation: moveBanner 7s infinite linear;
+    /*animation: moveBanner 7s infinite linear;*/
 }
 
 .header-image {
-    width: 700px;
-    height: 200px;
+    width: 100px;
     margin: 0 10px;
 }
 
@@ -61,7 +60,22 @@ h1 {
     color: #000000;
     text-align: center;
     margin-top: 20px;
-    animation: colorChange 5s infinite; 
+    animation: colorChange 5s infinite;
+}
+
+.h3-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    margin-top: -30px;
+}
+
+h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 @keyframes colorChange {
@@ -72,7 +86,7 @@ h1 {
         color: #ff0000;
     }
     50% {
-        color: #00ff00;
+        color: #e600ff;
     }
     75% {
         color: #0000ff;
@@ -92,6 +106,11 @@ h1 {
     100% {
         transform: translateX(100%);
     }
+}
+
+.img-mov{
+    padding-top: 50px;
+    animation: moveBanner 7s infinite linear;
 }
 
 /* Contenedor principal */
@@ -135,12 +154,12 @@ input {
 }
 
 input::placeholder {
-    color: #868686; /* Cambia este color al que prefieras */
+    color: #c6c6c6; /* Cambia este color al que prefieras */
     opacity: 1; /* Asegúrate de que la opacidad esté al 100% */
 }
 
 form button {
-    padding: 10px;
+    padding: 15px;
     font-size: 1rem;
     background-color: #1db954;
     color: #fff;
@@ -156,14 +175,19 @@ form button:hover {
 
 /* Botón en listas */
 button {
-    padding: 8px 12px;
-    background-color: #1db954;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    font-weight: bold;
+    background: linear-gradient(135deg, #136a3a, #0f532d);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: inline-block;
 }
 
 button:hover {
-    background-color: #14893c;
+    background: linear-gradient(135deg, #0f532d, #094020);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+button:focus {
+    outline: 2px dashed #fff;
+    outline-offset: 3px;
 }

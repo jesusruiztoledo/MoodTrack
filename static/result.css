@@ -13,15 +13,32 @@ html, body {
 /* Estilo global */
 body {
     font-family: 'Arial', sans-serif;
+    text-align: center;
     line-height: 1.6;
     background: linear-gradient(135deg, #1db954, #191414);
+    background-size: 400% 400%;
+    animation: gradientAnimation 5s ease infinite;
+    background-attachment: fixed; /* Hace que el fondo se mantenga fijo al hacer scroll */
     color: #fff;
     padding: 20px;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 70% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 h1, h2 {
     text-align: center;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 a {
@@ -124,4 +141,12 @@ button:hover {
     display: block;
     text-align: center;
     margin-top: 20px;
+}
+
+.text-danger {
+    color: red;
+}
+
+.text-success {
+    color: green;
 }

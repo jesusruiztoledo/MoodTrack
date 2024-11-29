@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados del Análisis</title>
     <link rel="stylesheet" href="/static/result.css">
+    <link rel="icon" href="../static/moodtrack_logo-removebg-preview.png" type="image/x-icon">
 </head>
 <body>
+    <h1>Resultados del Análisis de Sentimientos</h1>
     <div class="container">
-        <h1>Resultados del Análisis de Sentimientos</h1>
         <table>
             <tr>
                 <th>Canción</th>
@@ -20,7 +21,12 @@
             <tr>
                 <td>{{ result.song }}</td>
                 <td>{{ result.artist }}</td>
-                <td>{{ result.sentiment }}</td>
+                <td class="
+                    {% if result.sentiment == 'Triste' %}text-danger
+                    {% else %}text-success
+                    {% endif %}">
+                    {{ result.sentiment }}
+                </td>
                 <td>{{ result.score }}</td>
             </tr>
             {% endfor %}
